@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@moresec/moresec/typescript",
+    "plugin:prettier/recommended"
+  ]
+}
