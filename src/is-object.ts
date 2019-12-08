@@ -1,5 +1,6 @@
 /**
  * 是否为对象。格式为 `{}` | `() => {}` | `function () {}`
+ * 同 lodash/is-object
  *
  * @param value 输入值
  */
