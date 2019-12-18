@@ -18,7 +18,13 @@ import { downloadFiles, ... } from '@moresec/utils'
 
 + delay
 + downloadFiles
++ includeScripts
 + isEmptyArray
 + isObject
 + patterns
 + typeOf
+
+
+## 兼容性
+
+> IE >= 10
