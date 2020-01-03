@@ -22,6 +22,7 @@ import { downloadFiles, ... } from '@moresec/utils'
 + isEmptyArray
 + isObject
 + patterns
++ playAudio
 + typeOf
 
 
