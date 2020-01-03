@@ -6,6 +6,7 @@ import isObject from './is-object'
 import patterns from './patterns'
 import playAudio from './play-audio'
 import typeOf from './type-of'
+import uniqueArray from './unique-array'
 
 export {
   delay,
@@ -15,5 +16,6 @@ export {
   isObject,
   patterns,
   playAudio,
-  typeOf
+  typeOf,
+  uniqueArray
 }

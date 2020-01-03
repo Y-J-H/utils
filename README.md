@@ -24,6 +24,7 @@ import { downloadFiles, ... } from '@moresec/utils'
 + patterns
 + playAudio
 + typeOf
++ uniqueArray
 
 
 ## 兼容性

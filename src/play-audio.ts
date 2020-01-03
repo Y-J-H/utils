@@ -2,7 +2,7 @@
  * 播放音频
  * @param url 音频文件路径
  */
-export default function handlePlayAudio(url: string): void {
+export default function playAudio(url: string): void {
   const $audio = document.createElement('audio')
   const $body = document.body
 
