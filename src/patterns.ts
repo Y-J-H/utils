@@ -1,3 +1,6 @@
+/**
+ * 常用正则表达式：username, password, email, phone, ip, port, url
+ */
 export default {
   username: /^[0-9a-zA-Z_]{1,}$/,
   password: /^[a-zA-Z0-9`!@#%()_+=[{\]}\\|/'"~,.?-\s]*$/,
