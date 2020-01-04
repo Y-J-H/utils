@@ -2,6 +2,7 @@ import delay from './delay'
 import downloadFiles from './download-files'
 import includeScripts from './include-scripts'
 import isEmptyArray from './is-empty-array'
+import isInSameNetworkSegment from './is-in-same-network-segment'
 import isObject from './is-object'
 import patterns from './patterns'
 import playAudio from './play-audio'
@@ -13,6 +14,7 @@ export {
   downloadFiles,
   includeScripts,
   isEmptyArray,
+  isInSameNetworkSegment,
   isObject,
   patterns,
   playAudio,
