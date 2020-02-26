@@ -3,6 +3,7 @@
  * @param addr 下载地址
  * @param options fetch 的配置信息
  * @param successCallback 接口成功返回的回调
+ * @param failCallback 接口失败的回调
  * @param finishCallback 下载完成的回调
  */
 export default function downloadFileByFetch(
