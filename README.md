@@ -17,6 +17,7 @@ import { downloadFiles, ... } from '@moresec/utils'
 ## 工具集列表
 
 + delay -------------------- 延迟执行函数，休眠函数
++ downloadFileByFetch ------ 通过 fetch 请求下载文件
 + downloadFiles ------------ 文件下载
 + includeScripts ----------- 加载外部 `js` `css` 文件，支持串行加载多个文件
 + isEmptyArray ------------- 判断数组是否为空；每一项之和是否为 0；每一项的某键的值之和是否为 0

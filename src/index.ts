@@ -1,4 +1,5 @@
 import delay from './delay'
+import downloadFileByFetch from './download-file-by-fetch'
 import downloadFiles from './download-files'
 import includeScripts from './include-scripts'
 import isEmptyArray from './is-empty-array'
@@ -11,6 +12,7 @@ import uniqueArray from './unique-array'
 
 export {
   delay,
+  downloadFileByFetch,
   downloadFiles,
   includeScripts,
   isEmptyArray,
