@@ -1,3 +1,6 @@
 export default {
-  esm: 'rollup'
+  esm: {
+    type: 'rollup',
+    file: 'index'
+  }
 }
