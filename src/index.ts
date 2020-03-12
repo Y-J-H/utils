@@ -9,6 +9,7 @@ import patterns from './patterns'
 import playAudio from './play-audio'
 import typeOf from './type-of'
 import uniqueArray from './unique-array'
+import validatePassword from './validate-password'
 
 export {
   delay,
@@ -21,5 +22,6 @@ export {
   patterns,
   playAudio,
   typeOf,
-  uniqueArray
+  uniqueArray,
+  validatePassword
 }
