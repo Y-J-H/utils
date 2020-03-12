@@ -1,5 +1,5 @@
 /**
- * 常用正则表达式：username, password, email, phone, ip, port, url
+ * 常用正则表达式：username, password, email, phone, ip, port, url, subnetMask
  */
 export default {
   username: /^[0-9a-zA-Z_]{1,}$/,
