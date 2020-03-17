@@ -32,17 +32,18 @@ export default function downloadFileByFetch(
   successCallback?: () => void,
   failCallback?: (err?: any) => void,
   finishCallback?: () => void,
-  context?: (input: RequestInfo, init?: RequestInit) => Promise<Response>
+  context = fetch
 ): void {
-  const _fetch = context || fetch
-  _fetch(addr, options)
+  context(addr, options)
     .then(res => {
       if (successCallback) successCallback()
+
       res.blob().then(blob => {
         if (blob.type === 'application/json') {
           failCallback && failCallback()
           return
         }
+
         // eslint-disable-next-line no-extra-boolean-cast
         if (!!window.navigator.msSaveOrOpenBlob) {
           // 兼容ie10
