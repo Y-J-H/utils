@@ -16,6 +16,7 @@ import { downloadFiles, ... } from '@moresec/utils'
 
 ## 工具集列表
 
++ computedNextPage --------- 表格中删除一定数据后，计算下次请求的页码数
 + delay -------------------- 延迟执行函数，休眠函数
 + downloadFileByFetch ------ 通过 fetch 请求下载文件
 + downloadFiles ------------ 文件下载

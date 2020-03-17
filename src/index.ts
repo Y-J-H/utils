@@ -1,3 +1,4 @@
+import computedNextPage from './computed-next-page'
 import delay from './delay'
 import downloadFileByFetch from './download-file-by-fetch'
 import downloadFiles from './download-files'
@@ -12,6 +13,7 @@ import uniqueArray from './unique-array'
 import validatePassword from './validate-password'
 
 export {
+  computedNextPage,
   delay,
   downloadFileByFetch,
   downloadFiles,
