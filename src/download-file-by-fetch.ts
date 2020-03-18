@@ -1,11 +1,10 @@
 /**
  * 从响应头 content-disposition 里获取文件名
  * @param res fetch 的响应
- * @param url 文件流信息
  */
-function _getFileName(res: Response, url: string): string {
+function _getFileName(res: Response): string {
   const dispositionInfo = res.headers.get('content-disposition')
-  let filename = url
+  let filename = ''
   if (dispositionInfo) {
     try {
       filename = decodeURI(dispositionInfo.split('filename=')[1])
@@ -43,17 +42,18 @@ export default function downloadFileByFetch(
           failCallback && failCallback()
           return
         }
+        const filename = _getFileName(res)
 
         // eslint-disable-next-line no-extra-boolean-cast
         if (!!window.navigator.msSaveOrOpenBlob) {
           // 兼容ie10
-          navigator.msSaveBlob(blob)
+          navigator.msSaveBlob(blob, filename)
         } else {
           const a = document.createElement('a')
           const url = window.URL.createObjectURL(blob)
           document.body.appendChild(a)
           a.href = url
-          a.download = _getFileName(res, url)
+          a.download = filename || url
           a.click()
           a.remove()
           window.URL.revokeObjectURL(url)
