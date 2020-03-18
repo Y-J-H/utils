@@ -1,6 +1,6 @@
 {
   "name": "@moresec/utils",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "MoresecFE's javascript utils",
   "scripts": {
     "lint": "eslint --fix \"src/**/*.ts\"",
