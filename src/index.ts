@@ -11,6 +11,7 @@ import playAudio from './play-audio'
 import typeOf from './type-of'
 import uniqueArray from './unique-array'
 import validatePassword from './validate-password'
+import flattenArray from './flatten-array'
 
 export {
   computedNextPage,
@@ -25,5 +26,6 @@ export {
   playAudio,
   typeOf,
   uniqueArray,
-  validatePassword
+  validatePassword,
+  flattenArray
 }

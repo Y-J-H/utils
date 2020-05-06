@@ -29,6 +29,7 @@ import { downloadFiles, ... } from '@moresec/utils'
 + typeOf ------------------- 验证数据类型
 + uniqueArray -------------- 数组去重
 + validatePassword --------- 密码校验, 可以校验大写字母, 小写字母, 数字, 特殊字符或其中的特定几项, 也可以校验长度
++ flattenArray ------------- 数组扁平化
 
 
 ## 兼容性
