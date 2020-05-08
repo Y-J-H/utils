@@ -4,6 +4,7 @@
   "description": "MoresecFE's javascript utils",
   "scripts": {
     "lint": "eslint --fix \"src/**/*.ts\"",
+    "test": "jest",
     "build": "father-build"
   },
   "repository": {
@@ -31,11 +32,14 @@
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "babel-eslint": "^10.0.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "chalk": "^2.4.2",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "father-build": "^1.17.0",
     "husky": "^3.1.0",
+    "jest": "^24.8.0",
     "lint-staged": "^9.5.0",
     "prettier": "1.19.1"
   },
