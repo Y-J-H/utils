@@ -20,6 +20,8 @@
     "noImplicitReturns": true
   },
   "exclude": [
-    "dist"
+    "dist",
+    "__tests__",
+    "jest.config.js"
   ]
 }

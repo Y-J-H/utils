@@ -1,5 +1,5 @@
 module.exports = {
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  testRegex: '/__tests__/[\\w|-]*.(spec|test).ts$',
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node']
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
 }

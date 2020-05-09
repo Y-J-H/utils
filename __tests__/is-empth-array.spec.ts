@@ -1,4 +1,4 @@
-import { isEmptyArray } from '../src/index.ts'
+import { isEmptyArray } from '../src'
 
 const emptyArray1 = []
 
