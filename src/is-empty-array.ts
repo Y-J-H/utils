@@ -9,7 +9,8 @@ import isObject from './is-object'
  * @param itemKey 数组项的某一个 key
  */
 export default function isEmptyArray(arr: any[], itemKey?: string): boolean {
-  if (!Array.isArray(arr)) return false
+  if (!Array.isArray(arr))
+    throw new TypeError('The object to be tested must be array!')
   if (arr.length === 0) return true
 
   let sum = 0
