@@ -39,21 +39,22 @@ export default function downloadFileByFetch(
 
       res.blob().then(blob => {
         if (blob.type === 'application/json') {
-          failCallback && failCallback()
+          failCallback && failCallback(res)
           return
         }
         const filename = _getFileName(res)
 
         // eslint-disable-next-line no-extra-boolean-cast
         if (!!window.navigator.msSaveOrOpenBlob) {
-          // 兼容ie10
+          // 兼容 ie10+
           navigator.msSaveBlob(blob, filename)
         } else {
           const a = document.createElement('a')
           const url = window.URL.createObjectURL(blob)
-          document.body.appendChild(a)
           a.href = url
           a.download = filename || url
+          a.style.visibility = 'hidden'
+          document.body.appendChild(a)
           a.click()
           a.remove()
           window.URL.revokeObjectURL(url)
