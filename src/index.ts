@@ -5,6 +5,7 @@ import downloadFiles from './download-files'
 import includeScripts from './include-scripts'
 import isEmptyArray from './is-empty-array'
 import isInSameNetworkSegment from './is-in-same-network-segment'
+import isNumber from './is-number'
 import isObject from './is-object'
 import patterns from './patterns'
 import playAudio from './play-audio'
@@ -21,6 +22,7 @@ export {
   includeScripts,
   isEmptyArray,
   isInSameNetworkSegment,
+  isNumber,
   isObject,
   patterns,
   playAudio,
