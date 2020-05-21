@@ -31,6 +31,7 @@ import { downloadFiles, ... } from '@moresec/utils'
 + uniqueArray -------------- 数组去重
 + validatePassword --------- 密码校验, 可以校验大写字母, 小写字母, 数字, 特殊字符或其中的特定几项, 也可以校验长度
 + flattenArray ------------- 数组扁平化
++ urlQuery ----------------- 将查询参数使用set方法存储到url中, 使用get方法获取当前query对象
 
 
 ## 兼容性
