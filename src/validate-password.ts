@@ -69,7 +69,7 @@ export default function validatePassword(
   if (minLen) {
     len = arrLen >= minLen
   }
-  if (maxLen) {
+  if (len && maxLen) {
     len = arrLen <= maxLen
   }
   for (const item of arr) {
