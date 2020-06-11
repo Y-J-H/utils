@@ -13,6 +13,11 @@ import typeOf from './type-of'
 import uniqueArray from './unique-array'
 import validatePassword from './validate-password'
 import flattenArray from './flatten-array'
+import numFormatW from './number-format-w'
+import secondFormatDays from './seconds-format-days'
+import getQueryName from './get-query-name'
+import arraySort from './array-sort'
+import expireTime from './expire-time'
 
 export {
   computedNextPage,
@@ -29,5 +34,10 @@ export {
   typeOf,
   uniqueArray,
   validatePassword,
-  flattenArray
+  flattenArray,
+  numFormatW,
+  secondFormatDays,
+  getQueryName,
+  arraySort,
+  expireTime
 }

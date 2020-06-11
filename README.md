@@ -31,6 +31,11 @@ import { downloadFiles, ... } from '@moresec/utils'
 + uniqueArray -------------- 数组去重
 + validatePassword --------- 密码校验, 可以校验大写字母, 小写字母, 数字, 特殊字符或其中的特定几项, 也可以校验长度
 + flattenArray ------------- 数组扁平化
++ numFormatW --------------- number格式化W
++ secondFormatDays --------- 秒格式化天、时、分
++ getQueryName ------------- 获取URL的name
++ arraySort ---------------- 数组排序
++ expireTime --------------- license到期时间
 
 
 ## 兼容性
