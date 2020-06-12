@@ -13,7 +13,7 @@ import typeOf from './type-of'
 import uniqueArray from './unique-array'
 import validatePassword from './validate-password'
 import flattenArray from './flatten-array'
-import urlQuery from './url-query'
+import qs from './qs'
 
 export {
   computedNextPage,
@@ -31,5 +31,5 @@ export {
   uniqueArray,
   validatePassword,
   flattenArray,
-  urlQuery
+  qs
 }
