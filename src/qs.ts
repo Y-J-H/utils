@@ -42,7 +42,7 @@ const formatterArrVal = (quote: any, val: any) => {
   return tempQuote
 }
 
-// Transform [a, b, c] to a.b.c
+// Transform a[0]b[0] = 1 to { a: [{ b: [1] }] }
 const keyArrToObject = (res: IDictionary, keys: string[], val: any) => {
   const key = keys.shift() || ''
   if (brackets.test(key)) {
