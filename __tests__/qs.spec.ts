@@ -100,3 +100,54 @@ describe('qs', () => {
     expect(qs.parseQuery('?a%5B0%5D.b=1&a%5B1%5D=2&a%5B2%5D=3')).toEqual({ a: [{ b: '1' }, '2', '3'] })
   })
 })
+
+describe('qs', () => {
+  test(`test simple url`, () => {
+    expect(qs.getNewUrl({
+      hash: '',
+      origin: 'https://1.1.1.1',
+      pathname: '/honey/re',
+      search: ''
+    },
+    { a: 1 })).toEqual('https://1.1.1.1/honey/re?a=1')
+    expect(qs.getNewUrl({
+      hash: '',
+      origin: 'https://1.1.1.1',
+      pathname: '/honey/re',
+      search: '?a=1&count=10&page=1'
+    },
+    { a: 3 })).toEqual('https://1.1.1.1/honey/re?a=3&count=10&page=1')
+  })
+  test(`test vue hash mode`, () => {
+    expect(qs.getNewUrl({
+      hash: '#/asset/web',
+      origin: 'http://localhost:8082',
+      pathname: '/',
+      search: ''
+    }, { a: [1,2] })).toEqual('http://localhost:8082/#/asset/web?a%5B0%5D=1&a%5B1%5D=2')
+    expect(qs.getNewUrl({
+      hash: '#/asset/web?a%5B0%5D=1&a%5B1%5D=2',
+      origin: 'http://localhost:8082',
+      pathname: '/',
+      search: ''
+    }, { a: [3,4] })).toEqual('http://localhost:8082/#/asset/web?a%5B0%5D=3&a%5B1%5D=4')
+  })
+  test(`test normal hash`, () => {
+    expect(qs.getNewUrl(
+      {
+        hash: '#123',
+        origin: 'https://1.1.1.1',
+        pathname: '/honey/re',
+        search: ''
+      }, { a: 1 }
+    )).toEqual('https://1.1.1.1/honey/re#123?a=1')
+    expect(qs.getNewUrl(
+      {
+        hash: '#123',
+        origin: 'https://1.1.1.1',
+        pathname: '/honey/re',
+        search: '?a=1&count=10&page=1'
+      }, { a: 1 }
+    )).toEqual('https://1.1.1.1/honey/re?a=1&count=10&page=1#123')
+  })
+})

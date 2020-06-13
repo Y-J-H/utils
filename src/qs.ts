@@ -5,6 +5,14 @@ interface IDictionary {
   [key: string]: any
 }
 
+interface ILocation {
+  host?: string
+  origin: string
+  pathname: string
+  hash: string
+  search: string
+}
+
 const encodeReserveRE = /[!'()*]/g
 const encodeReserveReplacer = (c: string) => `%${c.charCodeAt(0).toString(16)}`
 const commaRE = /%2C/g
@@ -137,9 +145,56 @@ const parseQuery = (query: string): IDictionary => {
   return res
 }
 
+/**
+ * vue 是使用 hash 模式去模拟 url 所以在这种情况下 search 都会在 hash 中
+ * 标准格式的 URL 是 scheme://host[:port]/path/.../[;url-params][?query-string][#anchor]
+ * anchor 中即 hash
+ */
+const getNewUrl = (location: ILocation, obj: IDictionary, title = '') => {
+  const { origin, pathname, hash = '', search } = location
+  let strQuery = ''
+  let currentHash = hash
+  let href = ''
+  let oldQuery = {}
+  let newStringifyQuery = ''
+  if (search) {
+    strQuery = search
+    oldQuery = parseQuery(strQuery)
+    newStringifyQuery = stringifyQuery(Object.assign(oldQuery, obj))
+    href = `${origin}${pathname}${newStringifyQuery}${currentHash}`
+  } else {
+    const tempArr = currentHash.split('?')
+    currentHash = tempArr[0]
+    strQuery = tempArr.slice(1).join('?')
+    oldQuery = parseQuery(strQuery)
+    newStringifyQuery = stringifyQuery(Object.assign(oldQuery, obj))
+    href = `${origin}${pathname}${currentHash}${newStringifyQuery}`
+  }
+  return href
+}
+
+/**
+ *
+ * @param location  window.location 对象
+ * @param obj 需要存储到url上的query参数
+ * @param title 是否更改浏览器title
+ *
+ */
+const replaceState = (location: Location, obj: IDictionary, title = '') => {
+  const { origin, pathname, hash = '', search } = location
+  const href = getNewUrl({ origin, pathname, hash, search }, obj, title)
+  if (window) {
+    window.history.replaceState(obj, title, href)
+  } else {
+    throw new Error('window 对象不存在')
+  }
+}
+
 const qs = {
   stringifyQuery,
-  parseQuery
+  parseQuery,
+  getNewUrl,
+  replaceState
 }
 
 export default qs
