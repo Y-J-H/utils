@@ -9,11 +9,16 @@ import isNumber from './is-number'
 import isObject from './is-object'
 import patterns from './patterns'
 import playAudio from './play-audio'
+import qs from './qs'
 import typeOf from './type-of'
 import uniqueArray from './unique-array'
 import validatePassword from './validate-password'
 import flattenArray from './flatten-array'
-import qs from './qs'
+import numFormatW from './number-format-w'
+import secondFormatDays from './seconds-format-days'
+import getQueryName from './get-query-name'
+import arraySort from './array-sort'
+import expireTime from './expire-time'
 
 export {
   computedNextPage,
@@ -27,9 +32,14 @@ export {
   isObject,
   patterns,
   playAudio,
+  qs,
   typeOf,
   uniqueArray,
   validatePassword,
   flattenArray,
-  qs
+  numFormatW,
+  secondFormatDays,
+  getQueryName,
+  arraySort,
+  expireTime
 }

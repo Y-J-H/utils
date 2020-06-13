@@ -16,7 +16,9 @@ export default function typeOf(value: any): string {
     '[object Undefined]': 'undefined',
     '[object Null]': 'null',
     '[object Object]': 'object',
-    '[object Symbol]': 'symbol'
+    '[object Symbol]': 'symbol',
+    '[object Set]': 'set',
+    '[object Map]': 'map'
   }
   return maps[Object.prototype.toString.call(value)]
 }
